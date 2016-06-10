@@ -1,0 +1,48 @@
+{
+  "name": "throw-rejects",
+  "version": "0.0.0",
+  "description": "Throw unhandled promise rejections.",
+  "homepage": "https://github.com/sholladay/throw-rejects",
+  "main": "index.js",
+  "author": {
+    "name": "Seth Holladay",
+    "url": "http://seth-holladay.com",
+    "email": "me@seth-holladay.com"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sholladay/throw-rejects.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sholladay/throw-rejects/issues",
+    "email": "me@seth-holladay.com"
+  },
+  "license": "MPL-2.0",
+  "files": [
+    "index.js",
+    "register.js"
+  ],
+  "keywords": [
+    "debug",
+    "debugging",
+    "verbose",
+    "throw",
+    "catch",
+    "handle",
+    "handler",
+    "unhandled",
+    "uncaught",
+    "promise",
+    "promises",
+    "reject",
+    "rejection",
+    "error",
+    "errors",
+    "exception",
+    "exceptions",
+    "crash"
+  ]
+}
