@@ -1,8 +1,8 @@
 'use strict';
 
-function onUnhandledRejection(err) {
+const onUnhandledRejection = (err) => {
     throw err;
-}
+};
 
 let registered = false;
 
