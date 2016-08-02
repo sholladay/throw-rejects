@@ -1,6 +1,6 @@
 {
   "name": "throw-rejects",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Throw unhandled promise rejections.",
   "homepage": "https://github.com/sholladay/throw-rejects",
   "main": "index.js",
