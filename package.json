@@ -26,8 +26,8 @@
     "register.js"
   ],
   "devDependencies": {
-    "eslint-config-tidy": "0.2.0",
-    "xo": "0.16.0"
+    "eslint-config-tidy": "^0.2.0",
+    "xo": "^0.16.0"
   },
   "keywords": [
     "debug",
