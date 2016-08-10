@@ -1,4 +1,4 @@
-# throw-rejects
+# throw-rejects [![Build status for throw-rejects on Circle CI.](https://img.shields.io/circleci/project/sholladay/throw-rejects/master.svg "Circle Build Status")](https://circleci.com/gh/sholladay/throw-rejects "Throw Rejects Builds")
 
 > Throw unhandled promise rejections.
 

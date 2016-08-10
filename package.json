@@ -20,13 +20,16 @@
     "url": "https://github.com/sholladay/throw-rejects/issues",
     "email": "me@seth-holladay.com"
   },
+  "engines": {
+    "node": ">=6"
+  },
   "license": "MPL-2.0",
   "files": [
-    "index.js",
-    "register.js"
+    "register.js",
+    "index.js"
   ],
   "devDependencies": {
-    "eslint-config-tidy": "^0.2.0",
+    "eslint-config-tidy": "^0.3.0",
     "xo": "^0.16.0"
   },
   "keywords": [
