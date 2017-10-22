@@ -1,8 +1,10 @@
-# throw-rejects [![Build status for throw-rejects on Circle CI.](https://img.shields.io/circleci/project/sholladay/throw-rejects/master.svg "Circle Build Status")](https://circleci.com/gh/sholladay/throw-rejects "Throw Rejects Builds")
+# throw-rejects [![Build status for Throw Rejects](https://img.shields.io/circleci/project/sholladay/throw-rejects/master.svg "Build Status")](https://circleci.com/gh/sholladay/throw-rejects "Builds")
 
-> Throw unhandled promise rejections.
+> Throw unhandled Promise rejections
 
 Fixes error handling for [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises), including the [swallowed error](http://jamesknelson.com/are-es6-promises-swallowing-your-errors/) problem, by converting unhandled rejections into normal thrown exceptions. Ensures that the process [crashes correctly](https://github.com/nodejs/node/pull/12010#issuecomment-289361496), just like [throwing non-Promise errors](https://nodejs.org/api/process.html#process_event_uncaughtexception) does.
+
+**Tip**: Be a good citizen and only use this in top level packages like apps and CLIs, as opposed to libraries, to avoid surprising any dependents.
 
 ## Why?
 
@@ -46,7 +48,7 @@ Alternatively, use the [register](https://github.com/sholladay/throw-rejects/blo
 require('throw-rejects/register');
 ```
 
-The `register` script is especially useful for modules using `import`, because that syntax does not allow immediate function calls. Thus, importing `register` is the shortest syntax in that environment.
+The `register` script is especially useful for modules using [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import), because that syntax does not allow immediate function calls. Thus, importing `register` is the shortest syntax in that environment.
 
 ```js
 import 'throw-rejects/register';
@@ -78,18 +80,24 @@ setTimeout(() => {
 
 Specifically, rejections will be considered handled and the process will **not** crash as long as you add `.catch()` anytime within the same event loop as the Promise is rejected, That is basically anywhere you would normally do so. It doesn't have to be chained directly, it can be later in a function, etc.
 
+## API
+
+### throwRejects()
+
+Activates a listener for [`unhandledRejection`](https://nodejs.org/api/process.html#process_event_unhandledrejection) events that throws the associated error as an exception. This will, in turn, bubble up to [`uncaughtException`](https://nodejs.org/api/process.html#process_event_uncaughtexception) and, by default, crash the process and print a stack trace.
+
 ## Contributing
 
-See our [contributing guidelines](https://github.com/sholladay/throw-rejects/blob/master/CONTRIBUTING.md "The guidelines for participating in this project.") for more details.
+See our [contributing guidelines](https://github.com/sholladay/throw-rejects/blob/master/CONTRIBUTING.md "Guidelines for participating in this project") for more details.
 
 1. [Fork it](https://github.com/sholladay/throw-rejects/fork).
 2. Make a feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
-5. [Submit a pull request](https://github.com/sholladay/throw-rejects/compare "Submit code to this project for review.").
+5. [Submit a pull request](https://github.com/sholladay/throw-rejects/compare "Submit code to this project for review").
 
 ## License
 
-[MPL-2.0](https://github.com/sholladay/throw-rejects/blob/master/LICENSE "The license for throw-rejects.") © [Seth Holladay](http://seth-holladay.com "Author of throw-rejects.")
+[MPL-2.0](https://github.com/sholladay/throw-rejects/blob/master/LICENSE "License for throw-rejects") © [Seth Holladay](https://seth-holladay.com "Author of throw-rejects")
 
 Go make something, dang it.
