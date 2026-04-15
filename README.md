@@ -2,6 +2,8 @@
 
 > Throw unhandled Promise rejections
 
+⚠️ **This package is obsolete due to [Node.js 15](https://nodejs.medium.com/node-js-v15-0-0-is-here-deb00750f278) changing its default behavior to throw unhandled promise rejections automatically.**
+
 Fixes error handling for [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises), including the [swallowed error](http://jamesknelson.com/are-es6-promises-swallowing-your-errors/) problem, by converting unhandled rejections into normal thrown exceptions. Ensures that the process [crashes correctly](https://github.com/nodejs/node/pull/12010#issuecomment-289361496), just like [throwing non-Promise errors](https://nodejs.org/api/process.html#process_event_uncaughtexception) does.
 
 **Tip**: Be a good citizen and only use this in top level packages like apps and CLIs, as opposed to libraries, to avoid surprising any dependents.
